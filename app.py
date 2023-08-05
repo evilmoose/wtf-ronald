@@ -12,5 +12,11 @@ connect_db(app)
 with app.app_context():
     db.create_all()
 
+### Step: 2 ###
+@app.route('/')
+def list_pets():
+    pets = Pet.query.all()
+    return render_template('home.html', pets=pets)
+
 if __name__ == "__main__":
     app.run(debug=True)
