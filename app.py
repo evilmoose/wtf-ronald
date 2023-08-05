@@ -18,5 +18,8 @@ def list_pets():
     pets = Pet.query.all()
     return render_template('home.html', pets=pets)
 
+### Step: 3 ###
+
+
 if __name__ == "__main__":
     app.run(debug=True)
